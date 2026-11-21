@@ -15,7 +15,7 @@ export default function AuthShell({ children }: { children: ReactNode }) {
 			<main className={styles.card}>
 				<BrandPanel />
 				<section className={styles.form}>
-					<Link href="/" className={styles.backHome}>
+					<Link href="/feed" className={styles.backHome}>
 						<svg
 							viewBox="0 0 24 24"
 							width="16"

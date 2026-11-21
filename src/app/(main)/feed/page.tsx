@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import HomePage from "../_components/home-page";
+import HomePage from "../_components/feed-page";
 
 export const metadata: Metadata = {
-	title: "Murmur — Home",
+	title: "Murmur — Feed",
 	description: "A calmer place to share what's happening.",
 };
 

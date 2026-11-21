@@ -42,7 +42,7 @@ const navItems: NavItem[] = [
 export default function LeftRail({ onPostClick, onNotice }: LeftRailProps) {
 	return (
 		<aside className={styles.leftRail}>
-			<Link href="/" className={styles.logo} aria-label="Murmur home">
+			<Link href="/feed" className={styles.logo} aria-label="Murmur home">
 				<BirdIcon size={30} />
 				<span className={styles.logoName}>Murmur</span>
 			</Link>
