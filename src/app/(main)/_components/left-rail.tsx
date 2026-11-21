@@ -44,6 +44,7 @@ export default function LeftRail({ onPostClick, onNotice }: LeftRailProps) {
 		<aside className={styles.leftRail}>
 			<Link href="/" className={styles.logo} aria-label="Murmur home">
 				<BirdIcon size={30} />
+				<span className={styles.logoName}>Murmur</span>
 			</Link>
 
 			<nav className={styles.nav} aria-label="Primary">

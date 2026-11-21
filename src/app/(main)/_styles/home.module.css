@@ -41,18 +41,27 @@
 }
 
 .logo {
-	display: grid;
-	place-items: center;
-	width: 52px;
-	height: 52px;
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	width: fit-content;
 	margin: 2px 0 4px;
-	border-radius: 50%;
+	padding: 12px 16px 12px 12px;
+	border-radius: 999px;
 	color: var(--blue);
 	transition: background-color 0.2s;
 }
 
 .logo:hover {
 	background-color: var(--blue-soft);
+}
+
+.logoName {
+	color: var(--text);
+	font-size: 26px;
+	font-weight: 900;
+	line-height: 1;
+	letter-spacing: -0.5px;
 }
 
 .nav {
@@ -782,6 +791,14 @@
 	}
 
 	.navLabel {
+		display: none;
+	}
+
+	.logo {
+		padding: 12px;
+	}
+
+	.logoName {
 		display: none;
 	}
 
