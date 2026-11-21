@@ -1,0 +1,389 @@
+.page {
+	--blue: #1da1f2;
+	--blue-dark: #0d8ad2;
+	--blue-deep: #0b6fc2;
+	--blue-soft: #e8f4fd;
+	--border: #dbe3e8;
+	--text: #14171a;
+	--text-gray: #536471;
+	--error: #e0245e;
+	--radius: 20px;
+
+	min-height: 100vh;
+	display: grid;
+	place-items: center;
+	padding: 24px;
+	background:
+		radial-gradient(
+			circle at 15% 20%,
+			rgba(29, 161, 242, 0.08),
+			transparent 45%
+		),
+		radial-gradient(
+			circle at 85% 80%,
+			rgba(11, 111, 194, 0.08),
+			transparent 45%
+		),
+		#f4f8fb;
+	font-family: var(--font-inter), "Segoe UI", Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Card ---------- */
+.card {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	width: 100%;
+	max-width: 880px;
+	min-height: 560px;
+	background-color: #fff;
+	color: var(--text);
+	border-radius: var(--radius);
+	box-shadow: 0 20px 60px rgba(20, 23, 26, 0.12);
+	overflow: hidden;
+}
+
+/* ---------- Brand Panel ---------- */
+.brand {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 18px;
+	padding: 48px;
+	background: linear-gradient(160deg, var(--blue) 0%, var(--blue-deep) 100%);
+	color: #fff;
+}
+
+.badge {
+	display: grid;
+	place-items: center;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	background-color: rgba(255, 255, 255, 0.15);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.brandName {
+	font-size: 34px;
+	font-weight: 900;
+	letter-spacing: -1px;
+}
+
+.tagline {
+	font-size: 18px;
+	line-height: 1.5;
+	opacity: 0.95;
+	font-weight: 500;
+}
+
+.features {
+	list-style: none;
+	margin-top: 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	font-size: 15px;
+	font-weight: 600;
+}
+
+.features li {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+/* ---------- Form Panel ---------- */
+.form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 48px;
+}
+
+.backHome {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	width: fit-content;
+	margin-bottom: 32px;
+	color: var(--text-gray);
+	font-size: 14px;
+	font-weight: 600;
+	border-radius: 999px;
+	padding: 6px 12px;
+	margin-left: -12px;
+	transition:
+		color 0.2s,
+		background-color 0.2s;
+}
+
+.backHome:hover {
+	color: var(--blue);
+	background-color: var(--blue-soft);
+}
+
+.form h1 {
+	font-size: 28px;
+	font-weight: 800;
+	letter-spacing: -0.5px;
+}
+
+.subtitle {
+	color: var(--text-gray);
+	font-size: 15px;
+	margin: 6px 0 28px;
+}
+
+/* ---------- Form Fields ---------- */
+.field {
+	margin-bottom: 18px;
+}
+
+.field label {
+	display: block;
+	font-size: 14px;
+	font-weight: 700;
+	margin-bottom: 6px;
+}
+
+.inputWrap {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 0 14px;
+	border: 1.5px solid var(--border);
+	border-radius: 12px;
+	color: var(--text-gray);
+	background-color: #fff;
+	transition:
+		border-color 0.2s,
+		box-shadow 0.2s;
+}
+
+.inputWrap:focus-within {
+	border-color: var(--blue);
+	box-shadow: 0 0 0 3px rgba(29, 161, 242, 0.15);
+	color: var(--blue);
+}
+
+.inputWrap input {
+	flex: 1;
+	min-width: 0;
+	border: none;
+	outline: none;
+	background: transparent;
+	font-family: inherit;
+	font-size: 15px;
+	padding: 13px 0;
+	color: var(--text);
+}
+
+.inputWrap input::placeholder {
+	color: #9db1bd;
+}
+
+.passwordInput::placeholder {
+	transform: translateY(20%);
+}
+
+.eyeButton {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	border: none;
+	background: transparent;
+	color: inherit;
+	cursor: pointer;
+	flex-shrink: 0;
+}
+
+/* Validation error state (appears only after the user interacts) */
+.fieldError {
+	display: none;
+	margin-top: 6px;
+	font-size: 13px;
+	color: var(--error);
+}
+
+.field:has(input:user-invalid) .inputWrap {
+	border-color: var(--error);
+	box-shadow: 0 0 0 3px rgba(224, 36, 94, 0.12);
+	color: var(--error);
+}
+
+.field:has(input:user-invalid) .fieldError {
+	display: block;
+}
+
+/* ---------- Row: remember me + forgot password ---------- */
+.formRow {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	margin: 4px 0 22px;
+	font-size: 14px;
+}
+
+.remember {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	color: var(--text-gray);
+	font-weight: 500;
+	cursor: pointer;
+}
+
+.remember input {
+	width: 16px;
+	height: 16px;
+	accent-color: var(--blue);
+	cursor: pointer;
+}
+
+.forgot {
+	padding: 0;
+	border: none;
+	background: transparent;
+	color: var(--blue);
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: 600;
+	cursor: pointer;
+	transition: color 0.2s;
+}
+
+.forgot:hover {
+	color: var(--blue-dark);
+	text-decoration: underline;
+}
+
+/* ---------- Buttons ---------- */
+.loginBtn {
+	width: 100%;
+	padding: 13px;
+	border: none;
+	border-radius: 999px;
+	background-color: var(--blue);
+	color: #fff;
+	font-size: 16px;
+	font-weight: 700;
+	transition:
+		background-color 0.2s,
+		transform 0.1s;
+}
+
+.loginBtn:hover {
+	background-color: var(--blue-dark);
+}
+
+.loginBtn:active {
+	transform: scale(0.98);
+}
+
+.divider {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	margin: 24px 0;
+	color: var(--text-gray);
+	font-size: 13px;
+	font-weight: 600;
+}
+
+.divider::before,
+.divider::after {
+	content: "";
+	flex: 1;
+	height: 1px;
+	background-color: var(--border);
+}
+
+.signupBtn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	padding: 13px;
+	border: 1.5px solid var(--blue);
+	border-radius: 999px;
+	background-color: transparent;
+	color: var(--blue);
+	font-size: 16px;
+	font-weight: 700;
+	text-align: center;
+	transition: background-color 0.2s;
+}
+
+.signupBtn:hover {
+	background-color: var(--blue-soft);
+}
+
+.terms {
+	margin-top: 20px;
+	font-size: 12px;
+	color: var(--text-gray);
+	text-align: center;
+	line-height: 1.5;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 768px) {
+	.card {
+		grid-template-columns: 1fr;
+		max-width: 440px;
+		min-height: 0;
+	}
+
+	.brand {
+		padding: 36px 32px;
+		gap: 12px;
+	}
+
+	.badge {
+		width: 48px;
+		height: 48px;
+	}
+
+	.brandName {
+		font-size: 26px;
+	}
+
+	.tagline {
+		font-size: 15px;
+	}
+
+	.features {
+		display: none;
+	}
+
+	.form {
+		padding: 32px;
+	}
+
+	.backHome {
+		display: none;
+	}
+}
+
+@media (max-width: 420px) {
+	.page {
+		padding: 12px;
+	}
+
+	.card {
+		border-radius: 16px;
+	}
+
+	.form {
+		padding: 24px 20px;
+	}
+
+	.form h1 {
+		font-size: 24px;
+	}
+}
