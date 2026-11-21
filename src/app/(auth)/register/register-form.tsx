@@ -1,11 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import type { SubmitEvent } from "react";
+import { type SubmitEvent, useState } from "react";
 import PasswordInput from "../_components/password-input";
 import styles from "../_styles/auth.module.css";
 
 export default function RegisterForm() {
+	const [showErrors, setShowErrors] = useState(false);
+
 	const handleRegister = (event: SubmitEvent<HTMLFormElement>) => {
 		event.preventDefault();
 
@@ -18,7 +20,11 @@ export default function RegisterForm() {
 
 	return (
 		<>
-			<form onSubmit={handleRegister}>
+			<form
+				className={showErrors ? styles.showErrors : undefined}
+				onInvalidCapture={() => setShowErrors(true)}
+				onSubmit={handleRegister}
+			>
 				<div className={styles.field}>
 					<label htmlFor="name">Name</label>
 					<div className={styles.inputWrap}>
