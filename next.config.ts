@@ -17,6 +17,14 @@ const nextConfig: NextConfig = {
 			},
 		},
 	},
+	async rewrites() {
+		return [
+			{
+				source: "/api/health",
+				destination: "/api",
+			},
+		];
+	},
 };
 
 export default nextConfig;
